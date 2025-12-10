@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=4 uid="uid://c5yggbkq4f22n"]
+
+[ext_resource type="PackedScene" uid="uid://blushqas4u821" path="res://entidades/player.tscn" id="1_wv76w"]
+[ext_resource type="TileSet" uid="uid://b1juqxup8lqtu" path="res://Scene/Tiles/Tiles/Terrain.tres" id="2_vj82b"]
+[ext_resource type="TileSet" uid="uid://dlsauvqge0sra" path="res://Scene/Tiles/Tiles/Decoration.tres" id="3_vj82b"]
+
+[node name="Tropic" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource("1_wv76w")]
+position = Vector2(60, 81)
+
+[node name="Terrain" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray("AAAPAAwAAgABAAMAAAAQAAwAAgACAAMAAAARAAwAAgACAAMAAAASAAwAAgACAAMAAAATAAwAAgACAAMAAAAUAAwAAgACAAMAAAAVAAwAAgACAAMAAAAWAAwAAgACAAMAAAAXAAwAAgACAAMAAAAYAAwAAgAHAAMAAAAeAAwAAgABAAMAAAAfAAwAAgACAAMAAAAgAAwAAgACAAMAAAAhAAwAAgACAAMAAAAiAAwAAgACAAMAAAAjAAwAAgACAAMAAAAkAAwAAgACAAMAAAAlAAwAAgACAAMAAAAmAAwAAgACAAMAAAAnAAwAAgACAAMAAAAoAAwAAgACAAMAAAApAAwAAgACAAMAAAAqAAwAAgACAAMAAAArAAwAAgACAAMAAAAsAAwAAgACAAMAAAAtAAwAAgACAAMAAAAuAAwAAgACAAMAAAAvAAwAAgACAAMAAAAwAAwAAgACAAMAAAAxAAwAAgACAAMAAAAyAAwAAgACAAMAAAAzAAwAAgACAAMAAAA0AAwAAgACAAMAAAA1AAwAAgACAAMAAAA2AAwAAgACAAMAAAA3AAwAAgACAAMAAAA4AAwAAgACAAMAAAA5AAwAAgACAAMAAAA6AAwAAgACAAMAAAA7AAwAAgACAAMAAAA8AAwAAgACAAMAAAAMAAsAAgAPAAMAAAAAAAwAAgACAAMAAAABAAwAAgACAAMAAAACAAwAAgACAAMAAAADAAwAAgACAAMAAAAEAAwAAgACAAMAAAAFAAwAAgACAAMAAAAGAAwAAgACAAMAAAAHAAwAAgACAAMAAAAIAAwAAgACAAMAAAAJAAwAAgAHAAMAAAA=")
+tile_set = ExtResource("2_vj82b")
+
+[node name="Decoration" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray("AAAKAAwAAwAMAAUAAAALAAwAAwAMAAUAAAAMAAwAAwAMAAUAAAANAAwAAwAMAAUAAAAOAAwAAwAMAAUAAAA=")
+tile_set = ExtResource("3_vj82b")
