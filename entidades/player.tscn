@@ -104,7 +104,7 @@ animations = [{
 "speed": 10.0
 }]
 
-[node name="Player" type="CharacterBody2D"]
+[node name="Player" type="CharacterBody2D" groups=["Player"]]
 position = Vector2(0, -2)
 script = ExtResource("1_le3lr")
 
@@ -118,10 +118,3 @@ z_index = 1
 sprite_frames = SubResource("SpriteFrames_7y4ih")
 animation = &"jump"
 autoplay = "idle"
-
-[node name="Camera2D" type="Camera2D" parent="."]
-offset = Vector2(0, 3.5)
-limit_left = 0
-limit_top = 0
-limit_bottom = 200
-position_smoothing_enabled = true
