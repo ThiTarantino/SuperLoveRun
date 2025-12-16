@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://btvt157u07qw0"]
+
+[ext_resource type="Script" uid="uid://drnrug7ou8que" path="res://Scripts/leves_end.gd" id="1_6mfcx"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2nbb8"]
+
+[node name="LevesEnd" type="Area2D"]
+collision_layer = 9
+collision_mask = 2
+script = ExtResource("1_6mfcx")
+next_level = "forest"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_2nbb8")
+debug_color = Color(0.7305993, 0.27904138, 0.9431891, 0.41960785)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_shape_entered" from="." to="." method="_on_body_shape_entered"]

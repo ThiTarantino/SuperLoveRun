@@ -1,7 +1,8 @@
-[gd_scene load_steps=18 format=3 uid="uid://blushqas4u821"]
+[gd_scene load_steps=19 format=3 uid="uid://blushqas4u821"]
 
 [ext_resource type="Script" uid="uid://crtlgja1dq7kb" path="res://Scripts/personagem.gd" id="1_le3lr"]
 [ext_resource type="Texture2D" uid="uid://bs225py0vkb4l" path="res://Sprites/3 - Princess Sera/Idle (16 x 32).png" id="2_11m8g"]
+[ext_resource type="Texture2D" uid="uid://ctvaqdldfb6u5" path="res://Sprites/3 - Princess Sera/pixil-frame-0 (9).png" id="2_opfg8"]
 [ext_resource type="Texture2D" uid="uid://co4gjncl0nd4l" path="res://Sprites/3 - Princess Sera/Jumping (16 x 32).png" id="3_0p7bn"]
 [ext_resource type="Texture2D" uid="uid://dp3bvs1ffdfh7" path="res://Sprites/3 - Princess Sera/Running (16 x 32).png" id="3_kp4u0"]
 
@@ -57,6 +58,14 @@ region = Rect2(80, 0, 16, 32)
 animations = [{
 "frames": [{
 "duration": 1.0,
+"texture": ExtResource("2_opfg8")
+}],
+"loop": true,
+"name": &"duck",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_kp4u0")
 }, {
 "duration": 1.0,
@@ -106,6 +115,8 @@ animations = [{
 
 [node name="Player" type="CharacterBody2D" groups=["Player"]]
 position = Vector2(0, -2)
+collision_layer = 2
+collision_mask = 9
 script = ExtResource("1_le3lr")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -116,5 +127,5 @@ shape = SubResource("CapsuleShape2D_iu0dc")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 z_index = 1
 sprite_frames = SubResource("SpriteFrames_7y4ih")
-animation = &"jump"
+animation = &"duck"
 autoplay = "idle"

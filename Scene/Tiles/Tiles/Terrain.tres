@@ -1,10 +1,8 @@
-[gd_resource type="TileSet" load_steps=9 format=3 uid="uid://b1juqxup8lqtu"]
+[gd_resource type="TileSet" load_steps=8 format=3 uid="uid://b1juqxup8lqtu"]
 
 [ext_resource type="Texture2D" uid="uid://ftmu5bys1q6q" path="res://Sprites/Seasonal Tilesets/1 - Grassland/Terrain (16 x 16).png" id="1_cmgdc"]
 [ext_resource type="Texture2D" uid="uid://me07cyf7o8ca" path="res://Sprites/Seasonal Tilesets/2 - Autumn Forest/Terrain (16 x 16).png" id="2_giek5"]
 [ext_resource type="Texture2D" uid="uid://drsxrrw85ktiq" path="res://Sprites/Seasonal Tilesets/3 - Tropics/Terrain (16 x 16).png" id="3_giek5"]
-
-[sub_resource type="TileMapPattern" id="TileMapPattern_giek5"]
 
 [sub_resource type="TileMapPattern" id="TileMapPattern_i78u2"]
 tile_data = PackedInt32Array(0, 589826, 3, 1, 655362, 3, 2, 786434, 3, 3, 851970, 3)
@@ -109,14 +107,19 @@ texture = ExtResource("2_giek5")
 7:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 9:3/0 = 0
 9:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, -0.8992939, -8, -0.17985725)
+9:3/0/physics_layer_0/polygon_0/one_way = true
 10:3/0 = 0
 10:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, -0.8992939, -8, -0.17985725)
+10:3/0/physics_layer_0/polygon_0/one_way = true
 11:3/0 = 0
 11:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, -0.8992939, -8, -0.17985725)
+11:3/0/physics_layer_0/polygon_0/one_way = true
 12:3/0 = 0
 12:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, -0.8992939, -8, -0.17985725)
+12:3/0/physics_layer_0/polygon_0/one_way = true
 13:3/0 = 0
 13:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, -0.8992939, -8, -0.17985725)
+13:3/0/physics_layer_0/polygon_0/one_way = true
 15:3/0 = 0
 1:4/0 = 0
 1:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
@@ -231,5 +234,4 @@ physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_xa75v")
 sources/1 = SubResource("TileSetAtlasSource_p6qlh")
 sources/2 = SubResource("TileSetAtlasSource_i78u2")
-pattern_0 = SubResource("TileMapPattern_giek5")
-pattern_1 = SubResource("TileMapPattern_i78u2")
+pattern_0 = SubResource("TileMapPattern_i78u2")
