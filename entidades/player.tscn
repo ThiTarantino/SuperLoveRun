@@ -1,11 +1,13 @@
-[gd_scene load_steps=20 format=3 uid="uid://blushqas4u821"]
+[gd_scene load_steps=23 format=3 uid="uid://blushqas4u821"]
 
 [ext_resource type="Script" uid="uid://crtlgja1dq7kb" path="res://Scripts/personagem.gd" id="1_le3lr"]
 [ext_resource type="Texture2D" uid="uid://bs225py0vkb4l" path="res://Sprites/3 - Princess Sera/Idle (16 x 32).png" id="2_11m8g"]
 [ext_resource type="Texture2D" uid="uid://ctvaqdldfb6u5" path="res://Sprites/3 - Princess Sera/pixil-frame-0 (9).png" id="2_opfg8"]
+[ext_resource type="Texture2D" uid="uid://cm6g5cdqmka8t" path="res://Sprites/3 - Princess Sera/Hurt (16 x 32).png" id="2_r4ns2"]
 [ext_resource type="Texture2D" uid="uid://co4gjncl0nd4l" path="res://Sprites/3 - Princess Sera/Jumping (16 x 32).png" id="3_0p7bn"]
 [ext_resource type="Texture2D" uid="uid://dd0adystklbv4" path="res://Sprites/3 - Princess Sera/pixil-frame-0 (10).png" id="3_2qu0p"]
 [ext_resource type="Texture2D" uid="uid://dp3bvs1ffdfh7" path="res://Sprites/3 - Princess Sera/Running (16 x 32).png" id="3_kp4u0"]
+[ext_resource type="Texture2D" uid="uid://cqdmtblifk8t6" path="res://Sprites/3 - Princess Sera/pixil-frame-0 (12).png" id="3_s8mye"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_iu0dc"]
 radius = 5.0
@@ -57,6 +59,17 @@ region = Rect2(80, 0, 16, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_7y4ih"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_r4ns2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_s8mye")
+}],
+"loop": false,
+"name": &"dead",
+"speed": 2.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("2_opfg8")
@@ -130,6 +143,9 @@ animations = [{
 "speed": 10.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2qu0p"]
+size = Vector2(12, 20)
+
 [node name="Player" type="CharacterBody2D" groups=["Player"]]
 position = Vector2(0, -2)
 collision_layer = 2
@@ -137,12 +153,29 @@ collision_mask = 9
 script = ExtResource("1_le3lr")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-visible = false
 position = Vector2(0, 4)
 shape = SubResource("CapsuleShape2D_iu0dc")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 z_index = 1
 sprite_frames = SubResource("SpriteFrames_7y4ih")
-animation = &"slide"
+animation = &"dead"
 autoplay = "idle"
+frame = 1
+frame_progress = 1.0
+
+[node name="Hitbox" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
+position = Vector2(0, 6)
+shape = SubResource("RectangleShape2D_2qu0p")
+debug_color = Color(0.95686275, 0, 0, 0.41960785)
+
+[node name="RealoadTimer" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+
+[connection signal="area_entered" from="Hitbox" to="." method="_on_hitbox_area_entered"]
+[connection signal="timeout" from="RealoadTimer" to="." method="_on_reaload_timer_timeout"]

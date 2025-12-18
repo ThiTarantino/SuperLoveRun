@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="SuperLoveRun"
-run/main_scene="uid://be85424v86cgt"
+run/main_scene="uid://dig4sixb674nb"
 config/features=PackedStringArray("4.5", "Mobile")
 config/icon="res://icon.svg"
 

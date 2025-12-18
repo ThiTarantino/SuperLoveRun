@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=4 uid="uid://c5yggbkq4f22n"]
+[gd_scene load_steps=14 format=4 uid="uid://c5yggbkq4f22n"]
 
 [ext_resource type="PackedScene" uid="uid://blushqas4u821" path="res://entidades/player.tscn" id="1_wv76w"]
 [ext_resource type="TileSet" uid="uid://b1juqxup8lqtu" path="res://Scene/Tiles/Tiles/Terrain.tres" id="2_vj82b"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://dq2oqhf3f6ygd" path="res://Sprites/Seasonal Tilesets/3 - Tropics/Background parts/2 - Waters_version_2.png" id="8_prgpd"]
 [ext_resource type="PackedScene" uid="uid://dftwnbncbjrm4" path="res://entidades/camera.tscn" id="9_vi8c3"]
 [ext_resource type="PackedScene" uid="uid://btvt157u07qw0" path="res://entidades/leves_end.tscn" id="10_prgpd"]
+[ext_resource type="PackedScene" uid="uid://mpgc3y8o1kcv" path="res://entidades/skeleton.tscn" id="11_vbnln"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_vbnln"]
 animations = [{
@@ -107,5 +108,8 @@ position = Vector2(848, 167)
 [node name="CollisionShape2D" parent="LevesEnd" index="0"]
 position = Vector2(0, -78.5)
 shape = SubResource("RectangleShape2D_prgpd")
+
+[node name="Skeleton" parent="." instance=ExtResource("11_vbnln")]
+position = Vector2(360, 161)
 
 [editable path="LevesEnd"]
