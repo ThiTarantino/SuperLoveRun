@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 enum SkeletonState { walk, dead }
 
-const SPEED = 10.0 # 300 pode ser muito rápido para um esqueleto!
+const SPEED = 15.0 # 300 pode ser muito rápido para um esqueleto!
 const JUMP_VELOCITY = -400.0
 
 @onready var anim: AnimatedSprite2D = $AnimatedSprite2D
@@ -42,7 +42,11 @@ func go_to_dead_state():
 	velocity = Vector2.ZERO
 
 func walk_state(_delta):
-	velocity.x = SPEED * direction
+	if anim.frame == 3 or anim.frame == 4:
+		velocity.x = SPEED * direction
+	else:
+		velocity.x = 0
+	
 	if wall_detector.is_colliding():
 		scale.x *= -1
 		direction *= -1

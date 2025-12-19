@@ -78,6 +78,8 @@ func exit_from_duck_state():
 func exit_from_slide_state():
 	set_large_collider()
 func go_to_dead_state():#morte
+	if status == PlayerState.dead:
+		return
 	status = PlayerState.dead
 	anim.play("dead")
 	velocity = Vector2.ZERO
@@ -179,15 +181,27 @@ func set_large_collider():
 
 
 func _on_hitbox_area_entered(area: Area2D) -> void:
+	if area.is_in_group("Enemies"):
+		hit_enemy(area)
+	elif area.is_in_group("LethalArea"):
+		hit_lethal_area()
+		
+func _on_hitbox_body_entered(body: Node2D) -> void:
+	if body.is_in_group("LethalArea"):
+		go_to_dead_state()
+	
+	
+func hit_enemy(area: Area2D):
 	if velocity.y > 0:
 		#inimigo morre
 		area.get_parent().take_damage()
 		go_to_jump_state()
 	else:
 		#jogador morre
-		if status != PlayerState.dead:
-			go_to_dead_state()
-
+		
+		go_to_dead_state()
+func hit_lethal_area():
+	go_to_dead_state()
 
 func _on_reaload_timer_timeout() -> void:
 	get_tree().reload_current_scene()

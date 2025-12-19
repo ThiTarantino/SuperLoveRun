@@ -1,0 +1,37 @@
+[gd_scene load_steps=7 format=4 uid="uid://d0opyacbti7b6"]
+
+[ext_resource type="PackedScene" uid="uid://blushqas4u821" path="res://entidades/player.tscn" id="1_rrfiq"]
+[ext_resource type="PackedScene" uid="uid://dftwnbncbjrm4" path="res://entidades/camera.tscn" id="2_rpc5m"]
+[ext_resource type="PackedScene" uid="uid://btvt157u07qw0" path="res://entidades/leves_end.tscn" id="3_315q1"]
+[ext_resource type="TileSet" uid="uid://b1juqxup8lqtu" path="res://Scene/Tiles/Tiles/Terrain.tres" id="4_3a5jt"]
+[ext_resource type="TileSet" uid="uid://7bp717q77rw" path="res://Scene/Tiles/Tiles/Lava.tres" id="5_rpc5m"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rpc5m"]
+size = Vector2(12, 205)
+
+[node name="Winter" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource("1_rrfiq")]
+position = Vector2(21, 177)
+decceleration = 40
+slide_decceleration = 20
+
+[node name="Camera" parent="." instance=ExtResource("2_rpc5m")]
+position = Vector2(152, 104)
+
+[node name="LevesEnd" parent="." instance=ExtResource("3_315q1")]
+position = Vector2(564, 182)
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray("AAAAAAwAAwABAAMAAAABAAwAAwACAAMAAAACAAwAAwACAAMAAAADAAwAAwACAAMAAAAEAAwAAwACAAMAAAAFAAwAAwACAAMAAAAGAAwAAwACAAMAAAAHAAwAAwACAAMAAAAIAAwAAwACAAMAAAAJAAwAAwACAAMAAAAKAAwAAwACAAMAAAALAAwAAwACAAMAAAAMAAwAAwACAAMAAAANAAwAAwACAAMAAAAOAAwAAwACAAMAAAAPAAwAAwACAAMAAAAQAAwAAwACAAMAAAARAAwAAwACAAMAAAASAAwAAwACAAMAAAATAAwAAwACAAMAAAAUAAwAAwACAAMAAAAVAAwAAwACAAMAAAAWAAwAAwACAAMAAAAXAAwAAwACAAMAAAAYAAwAAwACAAMAAAAZAAwAAwACAAMAAAAaAAwAAwACAAMAAAAbAAwAAwACAAMAAAAcAAwAAwACAAMAAAAdAAwAAwACAAMAAAAeAAwAAwACAAMAAAAfAAwAAwACAAMAAAAgAAwAAwACAAMAAAAhAAwAAwACAAMAAAAiAAwAAwACAAMAAAAjAAwAAwACAAMAAAA=")
+tile_set = ExtResource("4_3a5jt")
+
+[node name="TileMapLayer2" type="TileMapLayer" parent="." groups=["LethalArea"]]
+tile_map_data = PackedByteArray("AAADAAwAAgAAAAAAAAAEAAwAAgAAAAAAAAAFAAwAAgAAAAAAAAAGAAwAAgAAAAAAAAAHAAwAAgAAAAAAAAAIAAwAAgAAAAAAAAADAA0AAgAAAAEAAAAEAA0AAgAAAAEAAAAFAA0AAgAAAAEAAAAGAA0AAgAAAAEAAAAHAA0AAgAAAAEAAAAIAA0AAgAAAAEAAAA=")
+tile_set = ExtResource("5_rpc5m")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-4, 92.5)
+shape = SubResource("RectangleShape2D_rpc5m")

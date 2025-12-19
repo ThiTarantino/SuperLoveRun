@@ -1,0 +1,59 @@
+[gd_resource type="TileSet" load_steps=7 format=3 uid="uid://7bp717q77rw"]
+
+[ext_resource type="Texture2D" uid="uid://c5xmqkjfgxs23" path="res://Sprites/Seasonal Tilesets/5 - Misc. universal tiles/Lava_frames (16 x 32).png" id="1_563sx"]
+[ext_resource type="Texture2D" uid="uid://bx87tihlnb7u6" path="res://Sprites/Seasonal Tilesets/5 - Misc. universal tiles/Water_frames (16 x 32).png" id="1_okigm"]
+[ext_resource type="Texture2D" uid="uid://bldey10aikrac" path="res://Sprites/Seasonal Tilesets/5 - Misc. universal tiles/Bubbling_Oil_frames (16 x 32).png" id="3_tpxfp"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_tpxfp"]
+texture = ExtResource("1_okigm")
+0:0/animation_speed = 2.0
+0:0/animation_frame_0/duration = 0.3
+0:0/animation_frame_1/duration = 1.0
+0:0/0 = 0
+0:0/0/z_index = 3
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 1.7985878, 8, 1.6187286, 8, 8, -8, 8)
+0:1/animation_speed = 2.0
+0:1/animation_frame_0/duration = 0.3
+0:1/animation_frame_1/duration = 1.0
+0:1/0 = 0
+0:1/0/z_index = 3
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 1.7985878, 8, 1.6187286, 8, 8, -8, 8)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3tkwh"]
+texture = ExtResource("1_563sx")
+0:0/animation_frame_0/duration = 0.1
+0:0/animation_frame_1/duration = 0.1
+0:0/animation_frame_2/duration = 0.1
+0:0/animation_frame_3/duration = 0.1
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 1.0791531, 8, 0.8992939, 8, 8, -8, 8)
+0:1/animation_frame_0/duration = 0.1
+0:1/animation_frame_1/duration = 0.1
+0:1/animation_frame_2/duration = 0.1
+0:1/animation_frame_3/duration = 0.1
+0:1/0 = 0
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_onwxg"]
+texture = ExtResource("3_tpxfp")
+0:0/animation_frame_0/duration = 0.1
+0:0/animation_frame_1/duration = 0.1
+0:0/animation_frame_2/duration = 0.1
+0:0/animation_frame_3/duration = 0.1
+0:0/0 = 0
+0:0/0/z_index = 3
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, 4.4964695, 8, 8, -8, 8)
+0:1/animation_frame_0/duration = 0.1
+0:1/animation_frame_1/duration = 0.1
+0:1/animation_frame_2/duration = 0.1
+0:1/animation_frame_3/duration = 0.1
+0:1/0 = 0
+0:1/0/z_index = 3
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, 4.4964695, 8, 8, -8, 8)
+
+[resource]
+physics_layer_0/collision_layer = 16
+physics_layer_0/collision_mask = 2
+sources/1 = SubResource("TileSetAtlasSource_3tkwh")
+sources/0 = SubResource("TileSetAtlasSource_tpxfp")
+sources/2 = SubResource("TileSetAtlasSource_onwxg")
