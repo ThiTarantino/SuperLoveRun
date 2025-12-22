@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=4 uid="uid://d0opyacbti7b6"]
+[gd_scene load_steps=8 format=4 uid="uid://d0opyacbti7b6"]
 
 [ext_resource type="PackedScene" uid="uid://blushqas4u821" path="res://entidades/player.tscn" id="1_rrfiq"]
 [ext_resource type="PackedScene" uid="uid://dftwnbncbjrm4" path="res://entidades/camera.tscn" id="2_rpc5m"]
 [ext_resource type="PackedScene" uid="uid://btvt157u07qw0" path="res://entidades/leves_end.tscn" id="3_315q1"]
 [ext_resource type="TileSet" uid="uid://b1juqxup8lqtu" path="res://Scene/Tiles/Tiles/Terrain.tres" id="4_3a5jt"]
 [ext_resource type="TileSet" uid="uid://7bp717q77rw" path="res://Scene/Tiles/Tiles/Lava.tres" id="5_rpc5m"]
+[ext_resource type="PackedScene" uid="uid://mpgc3y8o1kcv" path="res://entidades/skeleton.tscn" id="6_315q1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rpc5m"]
 size = Vector2(12, 205)
@@ -27,6 +28,7 @@ tile_map_data = PackedByteArray("AAAAAAwAAwABAAMAAAABAAwAAwACAAMAAAACAAwAAwACAAM
 tile_set = ExtResource("4_3a5jt")
 
 [node name="TileMapLayer2" type="TileMapLayer" parent="." groups=["LethalArea"]]
+position = Vector2(372, 0)
 tile_map_data = PackedByteArray("AAADAAwAAgAAAAAAAAAEAAwAAgAAAAAAAAAFAAwAAgAAAAAAAAAGAAwAAgAAAAAAAAAHAAwAAgAAAAAAAAAIAAwAAgAAAAAAAAADAA0AAgAAAAEAAAAEAA0AAgAAAAEAAAAFAA0AAgAAAAEAAAAGAA0AAgAAAAEAAAAHAA0AAgAAAAEAAAAIAA0AAgAAAAEAAAA=")
 tile_set = ExtResource("5_rpc5m")
 
@@ -35,3 +37,6 @@ tile_set = ExtResource("5_rpc5m")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2(-4, 92.5)
 shape = SubResource("RectangleShape2D_rpc5m")
+
+[node name="Skeleton" parent="." instance=ExtResource("6_315q1")]
+position = Vector2(86, 175)
