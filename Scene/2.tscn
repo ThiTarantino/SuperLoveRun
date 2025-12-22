@@ -129,7 +129,7 @@ next_level = "3"
 position = Vector2(540, 47)
 
 [node name="Skeleton2" parent="inimigos" instance=ExtResource("12_j4ia5")]
-position = Vector2(706, 77)
+position = Vector2(2420, 89)
 
 [node name="Skeleton3" parent="inimigos" instance=ExtResource("12_j4ia5")]
 position = Vector2(854, 78)

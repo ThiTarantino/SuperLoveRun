@@ -1,0 +1,36 @@
+[gd_scene load_steps=5 format=3 uid="uid://qobv4172inqu"]
+
+[ext_resource type="Script" uid="uid://c5xc5yvhbkaw0" path="res://Scripts/spinning_bone.gd" id="1_c1r5u"]
+[ext_resource type="Texture2D" uid="uid://bgwxm5apaexfh" path="res://Sprites/Plant/Bullet.png" id="2_c1r5u"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_c1r5u"]
+radius = 4.0
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_lc7tw"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_c1r5u")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[node name="SpinningBone" type="Area2D" groups=["LethalArea"]]
+collision_layer = 16
+collision_mask = 3
+script = ExtResource("1_c1r5u")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(0.6, 0.6)
+shape = SubResource("CircleShape2D_c1r5u")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.6, 0.6)
+sprite_frames = SubResource("SpriteFrames_lc7tw")
+autoplay = "default"
+frame_progress = 0.9454937
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
