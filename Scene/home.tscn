@@ -8,9 +8,9 @@
 [ext_resource type="Texture2D" uid="uid://cvqapy6wpvko0" path="res://Sprites/Seasonal Tilesets/3 - Tropics/Background parts/3 - Background_clouds.png" id="6_rngmo"]
 [ext_resource type="Texture2D" uid="uid://i2qyvd2tngwg" path="res://Sprites/Seasonal Tilesets/3 - Tropics/Background parts/1 - Waters_version_1.png" id="7_ox16j"]
 [ext_resource type="Texture2D" uid="uid://dq2oqhf3f6ygd" path="res://Sprites/Seasonal Tilesets/3 - Tropics/Background parts/2 - Waters_version_2.png" id="8_tcna0"]
-[ext_resource type="TileSet" uid="uid://b1juqxup8lqtu" path="res://Scene/Tiles/Tiles/Terrain.tres" id="9_8aoc7"]
-[ext_resource type="TileSet" uid="uid://dlsauvqge0sra" path="res://Scene/Tiles/Tiles/Decoration.tres" id="10_dj0hx"]
-[ext_resource type="TileSet" uid="uid://7bp717q77rw" path="res://Scene/Tiles/Tiles/Lava.tres" id="11_65eq1"]
+[ext_resource type="TileSet" uid="uid://b1juqxup8lqtu" path="res://Tiles/Tiles/Terrain.tres" id="9_8aoc7"]
+[ext_resource type="TileSet" uid="uid://dlsauvqge0sra" path="res://Tiles/Tiles/Decoration.tres" id="10_dj0hx"]
+[ext_resource type="TileSet" uid="uid://7bp717q77rw" path="res://Tiles/Tiles/Lava.tres" id="11_65eq1"]
 [ext_resource type="PackedScene" uid="uid://mpgc3y8o1kcv" path="res://entidades/skeleton.tscn" id="12_c8uwk"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_v456u"]

@@ -1,8 +1,8 @@
 [gd_scene load_steps=4 format=4 uid="uid://be85424v86cgt"]
 
 [ext_resource type="PackedScene" uid="uid://blushqas4u821" path="res://entidades/player.tscn" id="1_kelma"]
-[ext_resource type="TileSet" uid="uid://b1juqxup8lqtu" path="res://Scene/Tiles/Tiles/Terrain.tres" id="2_ivevv"]
-[ext_resource type="TileSet" uid="uid://dlsauvqge0sra" path="res://Scene/Tiles/Tiles/Decoration.tres" id="3_xa75v"]
+[ext_resource type="TileSet" uid="uid://b1juqxup8lqtu" path="res://Tiles/Tiles/Terrain.tres" id="2_ivevv"]
+[ext_resource type="TileSet" uid="uid://dlsauvqge0sra" path="res://Tiles/Tiles/Decoration.tres" id="3_xa75v"]
 
 [node name="Game" type="Node2D"]
 

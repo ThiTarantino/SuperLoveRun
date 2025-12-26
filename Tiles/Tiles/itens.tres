@@ -1,0 +1,10 @@
+[gd_resource type="TileSet" load_steps=3 format=3 uid="uid://cmhkcsquaf8u3"]
+
+[ext_resource type="PackedScene" uid="uid://c73co3ulnch2b" path="res://entidades/coin.tscn" id="1_gnhcy"]
+
+[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_uxh6n"]
+resource_name = "Coin"
+scenes/1/scene = ExtResource("1_gnhcy")
+
+[resource]
+sources/0 = SubResource("TileSetScenesCollectionSource_uxh6n")

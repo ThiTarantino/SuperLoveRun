@@ -1,0 +1,147 @@
+[gd_scene load_steps=9 format=3 uid="uid://dy5la4lh41pyn"]
+
+[ext_resource type="Script" uid="uid://4t1hkcdtxosp" path="res://Scripts/control.gd" id="1_1xsix"]
+[ext_resource type="Texture2D" uid="uid://b02bh408jbcw2" path="res://Mini FX, Items & UI/Mini FX, Items & UI/Common Pick-ups/00_Coin-Sprites.png" id="2_rftc2"]
+[ext_resource type="Texture2D" uid="uid://wifukq7m3qk6" path="res://Mini FX, Items & UI/Mini FX, Items & UI/Common Pick-ups/01_Coin-Sprites.png" id="3_61f8s"]
+[ext_resource type="Texture2D" uid="uid://b8y7g5i2yyy3x" path="res://Mini FX, Items & UI/Mini FX, Items & UI/Common Pick-ups/02_Coin-Sprites.png" id="4_g10ll"]
+[ext_resource type="Texture2D" uid="uid://hrrcyx31a0cy" path="res://Mini FX, Items & UI/Mini FX, Items & UI/Common Pick-ups/03_Coin-Sprites.png" id="5_gpiub"]
+[ext_resource type="FontFile" uid="uid://cs4h6mlayhywq" path="res://Mini FX, Items & UI/Mini FX, Items & UI/Common Pick-ups/RevMiniPixel.ttf" id="6_amv7k"]
+[ext_resource type="Texture2D" uid="uid://i0tdftaifiut" path="res://Sprites/3 - Princess Sera/Shooting_Projectile_Standing (16 x 32).png" id="7_rftc2"]
+
+[sub_resource type="AnimatedTexture" id="AnimatedTexture_1fv7p"]
+frames = 4
+frame_0/texture = ExtResource("2_rftc2")
+frame_1/texture = ExtResource("3_61f8s")
+frame_1/duration = 1.0
+frame_2/texture = ExtResource("4_g10ll")
+frame_2/duration = 1.0
+frame_3/texture = ExtResource("5_gpiub")
+frame_3/duration = 1.0
+
+[node name="HUD" type="CanvasLayer"]
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_1xsix")
+
+[node name="Container" type="MarginContainer" parent="Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="coins" type="HBoxContainer" parent="Control/Container"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+
+[node name="coins_icon" type="TextureRect" parent="Control/Container/coins"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+texture = SubResource("AnimatedTexture_1fv7p")
+
+[node name="coins_counter" type="Label" parent="Control/Container/coins"]
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("6_amv7k")
+theme_override_font_sizes/font_size = 8
+text = "0000"
+vertical_alignment = 1
+metadata/_edit_group_ = true
+
+[node name="Score" type="HBoxContainer" parent="Control/Container"]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+
+[node name="score_lable" type="Label" parent="Control/Container/Score"]
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("6_amv7k")
+theme_override_font_sizes/font_size = 8
+text = "SCORE:"
+vertical_alignment = 1
+metadata/_edit_group_ = true
+
+[node name="score_counter2" type="Label" parent="Control/Container/Score"]
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("6_amv7k")
+theme_override_font_sizes/font_size = 8
+text = "000000"
+vertical_alignment = 1
+metadata/_edit_group_ = true
+
+[node name="timer" type="HBoxContainer" parent="Control/Container"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+
+[node name="timer_lable" type="Label" parent="Control/Container/timer"]
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("6_amv7k")
+theme_override_font_sizes/font_size = 8
+text = "TIME:"
+vertical_alignment = 1
+metadata/_edit_group_ = true
+
+[node name="timer_counter2" type="Label" parent="Control/Container/timer"]
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("6_amv7k")
+theme_override_font_sizes/font_size = 8
+text = "00:00"
+vertical_alignment = 1
+metadata/_edit_group_ = true
+
+[node name="Label" type="Label" parent="Control/Container/timer"]
+layout_mode = 2
+
+[node name="life" type="HBoxContainer" parent="Control/Container"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 8
+
+[node name="life_icon" type="TextureRect" parent="Control/Container/life"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+texture = ExtResource("7_rftc2")
+
+[node name="life_separator" type="Label" parent="Control/Container/life"]
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("6_amv7k")
+theme_override_font_sizes/font_size = 8
+text = "X"
+vertical_alignment = 1
+metadata/_edit_group_ = true
+
+[node name="life_counter2" type="Label" parent="Control/Container/life"]
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("6_amv7k")
+theme_override_font_sizes/font_size = 8
+text = "03"
+vertical_alignment = 1
+metadata/_edit_group_ = true

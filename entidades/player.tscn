@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://blushqas4u821"]
+[gd_scene load_steps=24 format=3 uid="uid://blushqas4u821"]
 
 [ext_resource type="Script" uid="uid://crtlgja1dq7kb" path="res://Scripts/personagem.gd" id="1_le3lr"]
 [ext_resource type="Texture2D" uid="uid://bs225py0vkb4l" path="res://Sprites/3 - Princess Sera/Idle (16 x 32).png" id="2_11m8g"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://dd0adystklbv4" path="res://Sprites/3 - Princess Sera/pixil-frame-0 (10).png" id="3_2qu0p"]
 [ext_resource type="Texture2D" uid="uid://dp3bvs1ffdfh7" path="res://Sprites/3 - Princess Sera/Running (16 x 32).png" id="3_kp4u0"]
 [ext_resource type="Texture2D" uid="uid://cqdmtblifk8t6" path="res://Sprites/3 - Princess Sera/pixil-frame-0 (12).png" id="3_s8mye"]
+[ext_resource type="AudioStream" uid="uid://da4tgf7gvehrf" path="res://musicas/458641__lilmati__retro-jump-02.wav" id="9_s8mye"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_iu0dc"]
 radius = 5.0
@@ -176,6 +177,10 @@ debug_color = Color(0.95686275, 0, 0, 0.41960785)
 [node name="RealoadTimer" type="Timer" parent="."]
 wait_time = 2.0
 one_shot = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("9_s8mye")
+volume_db = -20.0
 
 [connection signal="area_entered" from="Hitbox" to="." method="_on_hitbox_area_entered"]
 [connection signal="body_entered" from="Hitbox" to="." method="_on_hitbox_body_entered"]

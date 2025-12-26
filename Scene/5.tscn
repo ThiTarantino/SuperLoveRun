@@ -1,11 +1,12 @@
-[gd_scene load_steps=18 format=4 uid="uid://bai0hr1mehy5o"]
+[gd_scene load_steps=22 format=4 uid="uid://bai0hr1mehy5o"]
 
-[ext_resource type="TileSet" uid="uid://b1juqxup8lqtu" path="res://Scene/Tiles/Tiles/Terrain.tres" id="1_mh6vi"]
-[ext_resource type="TileSet" uid="uid://dlsauvqge0sra" path="res://Scene/Tiles/Tiles/Decoration.tres" id="2_bvsuj"]
-[ext_resource type="TileSet" uid="uid://7bp717q77rw" path="res://Scene/Tiles/Tiles/Lava.tres" id="3_dn4s7"]
+[ext_resource type="TileSet" uid="uid://b1juqxup8lqtu" path="res://Tiles/Tiles/Terrain.tres" id="1_mh6vi"]
+[ext_resource type="TileSet" uid="uid://dlsauvqge0sra" path="res://Tiles/Tiles/Decoration.tres" id="2_bvsuj"]
+[ext_resource type="TileSet" uid="uid://7bp717q77rw" path="res://Tiles/Tiles/Lava.tres" id="3_dn4s7"]
 [ext_resource type="PackedScene" uid="uid://mpgc3y8o1kcv" path="res://entidades/skeleton.tscn" id="4_bvsuj"]
 [ext_resource type="Texture2D" uid="uid://m1jp0ma1n0t0" path="res://Sprites/Seasonal Tilesets/3 - Tropics/Background parts/5 - Sky_color.png" id="4_tl2jy"]
 [ext_resource type="Texture2D" uid="uid://cfx8ncy1whobu" path="res://Sprites/Seasonal Tilesets/3 - Tropics/Background parts/4 - Floating_clouds.png" id="5_8yehw"]
+[ext_resource type="TileSet" uid="uid://cmhkcsquaf8u3" path="res://Tiles/Tiles/itens.tres" id="6_tl2jy"]
 [ext_resource type="Texture2D" uid="uid://cvqapy6wpvko0" path="res://Sprites/Seasonal Tilesets/3 - Tropics/Background parts/3 - Background_clouds.png" id="6_yj2s6"]
 [ext_resource type="Texture2D" uid="uid://i2qyvd2tngwg" path="res://Sprites/Seasonal Tilesets/3 - Tropics/Background parts/1 - Waters_version_1.png" id="7_tyxys"]
 [ext_resource type="Texture2D" uid="uid://dq2oqhf3f6ygd" path="res://Sprites/Seasonal Tilesets/3 - Tropics/Background parts/2 - Waters_version_2.png" id="8_ey431"]
@@ -13,6 +14,9 @@
 [ext_resource type="PackedScene" uid="uid://dftwnbncbjrm4" path="res://entidades/camera.tscn" id="10_dbnwx"]
 [ext_resource type="PackedScene" uid="uid://btvt157u07qw0" path="res://entidades/leves_end.tscn" id="11_4nctq"]
 [ext_resource type="PackedScene" uid="uid://ce7wvsc5pmjhp" path="res://entidades/plant_1.tscn" id="13_dn4s7"]
+[ext_resource type="AudioStream" uid="uid://cheoslpfbhnyo" path="res://musicas/the-wandering-light-medieval-folk-rpg-game-music-434715.mp3" id="15_8yehw"]
+[ext_resource type="PackedScene" uid="uid://bww0hlsltla4e" path="res://entidades/controles.tscn" id="16_yj2s6"]
+[ext_resource type="PackedScene" uid="uid://dfnnytcqp8yuu" path="res://entidades/hud.tscn" id="17_tyxys"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_dvocq"]
 animations = [{
@@ -69,6 +73,10 @@ position = Vector2(2335, -636)
 [node name="Plant2" parent="TileMaps" instance=ExtResource("13_dn4s7")]
 position = Vector2(2337, -590)
 
+[node name="coin" type="TileMapLayer" parent="TileMaps"]
+tile_map_data = PackedByteArray("AAAZAAoAAAAAAAAAAQAYAAoAAAAAAAAAAQAXAAoAAAAAAAAAAQAEAAoAAAAAAAAAAQAFAAoAAAAAAAAAAQAGAAoAAAAAAAAAAQAMAAkAAAAAAAAAAQAMAAMAAAAAAAAAAQAMAP3/AAAAAAAAAQAMAPf/AAAAAAAAAQAMAPD/AAAAAAAAAQAMAPP/AAAAAAAAAQAMAOr/AAAAAAAAAQAMAOT/AAAAAAAAAQAMAN7/AAAAAAAAAQAbANr/AAAAAAAAAQAQANv/AAAAAAAAAQARANv/AAAAAAAAAQASANv/AAAAAAAAAQAhANv/AAAAAAAAAQAnANr/AAAAAAAAAQAzANr/AAAAAAAAAQAtANv/AAAAAAAAAQA7ANv/AAAAAAAAAQA8ANv/AAAAAAAAAQA9ANv/AAAAAAAAAQBGANr/AAAAAAAAAQBJANr/AAAAAAAAAQBMANr/AAAAAAAAAQBPANr/AAAAAAAAAQBSANr/AAAAAAAAAQBVANr/AAAAAAAAAQBcANv/AAAAAAAAAQBdANv/AAAAAAAAAQBeANv/AAAAAAAAAQBvANr/AAAAAAAAAQB6ANz/AAAAAAAAAQB5ANz/AAAAAAAAAQCBANz/AAAAAAAAAQCCANz/AAAAAAAAAQCJANz/AAAAAAAAAQCKANz/AAAAAAAAAQCOANn/AAAAAAAAAQCNANn/AAAAAAAAAQCGANn/AAAAAAAAAQCFANn/AAAAAAAAAQB+ANn/AAAAAAAAAQB9ANn/AAAAAAAAAQB5ANf/AAAAAAAAAQB6ANf/AAAAAAAAAQB9ANb/AAAAAAAAAQB+ANb/AAAAAAAAAQB/ANb/AAAAAAAAAQCCANb/AAAAAAAAAQCDANb/AAAAAAAAAQCEANb/AAAAAAAAAQCHANb/AAAAAAAAAQCIANb/AAAAAAAAAQCJANb/AAAAAAAAAQCMANb/AAAAAAAAAQCNANb/AAAAAAAAAQCOANb/AAAAAAAAAQCSANb/AAAAAAAAAQCUANv/AAAAAAAAAQCVANv/AAAAAAAAAQCWANv/AAAAAAAAAQCXANv/AAAAAAAAAQCYANv/AAAAAAAAAQA=")
+tile_set = ExtResource("6_tl2jy")
+
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
 [node name="5-Sky" type="ParallaxLayer" parent="ParallaxBackground"]
@@ -122,7 +130,7 @@ autoplay = "default"
 centered = false
 
 [node name="Player" parent="." instance=ExtResource("9_ny41t")]
-position = Vector2(1700, -596)
+position = Vector2(26, 146)
 
 [node name="Camera" parent="." instance=ExtResource("10_dbnwx")]
 position = Vector2(32, 153)
@@ -132,6 +140,7 @@ limit_right = 2511
 [node name="LevesEnd" parent="." instance=ExtResource("11_4nctq")]
 position = Vector2(2456, -691)
 scale = Vector2(1, 11.439999)
+next_level = "6"
 
 [node name="Limit" type="StaticBody2D" parent="."]
 
@@ -172,3 +181,12 @@ shape = SubResource("RectangleShape2D_dn4s7")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Limit4"]
 position = Vector2(2080, -608)
 shape = SubResource("RectangleShape2D_tl2jy")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("15_8yehw")
+volume_db = -10.0
+autoplay = true
+
+[node name="Controles" parent="." instance=ExtResource("16_yj2s6")]
+
+[node name="HUD" parent="." instance=ExtResource("17_tyxys")]

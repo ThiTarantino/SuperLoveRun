@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=4 uid="uid://dquoug75fb1xw"]
+[gd_scene load_steps=20 format=4 uid="uid://dquoug75fb1xw"]
 
 [ext_resource type="PackedScene" uid="uid://dftwnbncbjrm4" path="res://entidades/camera.tscn" id="1_d4qvb"]
 [ext_resource type="PackedScene" uid="uid://btvt157u07qw0" path="res://entidades/leves_end.tscn" id="2_itysq"]
@@ -7,11 +7,15 @@
 [ext_resource type="Texture2D" uid="uid://cvqapy6wpvko0" path="res://Sprites/Seasonal Tilesets/3 - Tropics/Background parts/3 - Background_clouds.png" id="5_s4ci2"]
 [ext_resource type="Texture2D" uid="uid://i2qyvd2tngwg" path="res://Sprites/Seasonal Tilesets/3 - Tropics/Background parts/1 - Waters_version_1.png" id="6_w4kbc"]
 [ext_resource type="Texture2D" uid="uid://dq2oqhf3f6ygd" path="res://Sprites/Seasonal Tilesets/3 - Tropics/Background parts/2 - Waters_version_2.png" id="7_mbqn1"]
-[ext_resource type="TileSet" uid="uid://b1juqxup8lqtu" path="res://Scene/Tiles/Tiles/Terrain.tres" id="8_p1rt1"]
-[ext_resource type="TileSet" uid="uid://dlsauvqge0sra" path="res://Scene/Tiles/Tiles/Decoration.tres" id="9_nif0h"]
-[ext_resource type="TileSet" uid="uid://7bp717q77rw" path="res://Scene/Tiles/Tiles/Lava.tres" id="10_iaqa1"]
+[ext_resource type="TileSet" uid="uid://b1juqxup8lqtu" path="res://Tiles/Tiles/Terrain.tres" id="8_p1rt1"]
+[ext_resource type="TileSet" uid="uid://dlsauvqge0sra" path="res://Tiles/Tiles/Decoration.tres" id="9_nif0h"]
+[ext_resource type="TileSet" uid="uid://7bp717q77rw" path="res://Tiles/Tiles/Lava.tres" id="10_iaqa1"]
+[ext_resource type="TileSet" uid="uid://cmhkcsquaf8u3" path="res://Tiles/Tiles/itens.tres" id="10_xusq7"]
 [ext_resource type="PackedScene" uid="uid://blushqas4u821" path="res://entidades/player.tscn" id="11_ojm61"]
 [ext_resource type="PackedScene" uid="uid://mpgc3y8o1kcv" path="res://entidades/skeleton.tscn" id="12_j4ia5"]
+[ext_resource type="AudioStream" uid="uid://cjxmvgwrbfcly" path="res://musicas/musica 1.mp3" id="13_itysq"]
+[ext_resource type="PackedScene" uid="uid://bww0hlsltla4e" path="res://entidades/controles.tscn" id="15_rehxv"]
+[ext_resource type="PackedScene" uid="uid://dy5la4lh41pyn" path="res://entidades/hud.tscn" id="17_w4kbc"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ee4jy"]
 animations = [{
@@ -104,6 +108,10 @@ tile_set = ExtResource("10_iaqa1")
 [node name="Skeleton" parent="TileMaps" instance=ExtResource("12_j4ia5")]
 position = Vector2(1199, 109)
 
+[node name="TileMapLayer" type="TileMapLayer" parent="TileMaps"]
+tile_map_data = PackedByteArray("AAAFAAEAAAAAAAAAAQAGAAEAAAAAAAAAAQAHAAEAAAAAAAAAAQAIAAEAAAAAAAAAAQAJAAEAAAAAAAAAAQAKAAEAAAAAAAAAAQALAAEAAAAAAAAAAQAMAAEAAAAAAAAAAQANAAEAAAAAAAAAAQAOAAEAAAAAAAAAAQAPAAEAAAAAAAAAAQAQAAEAAAAAAAAAAQARAAEAAAAAAAAAAQASAAEAAAAAAAAAAQATAAEAAAAAAAAAAQAUAAEAAAAAAAAAAQAVAAEAAAAAAAAAAQAcAAMAAAAAAAAAAQAdAAMAAAAAAAAAAQAeAAMAAAAAAAAAAQAmAAUAAAAAAAAAAQAnAAUAAAAAAAAAAQAoAAUAAAAAAAAAAQAwAAUAAAAAAAAAAQA1AAUAAAAAAAAAAQA6AAUAAAAAAAAAAQBBAAUAAAAAAAAAAQBCAAUAAAAAAAAAAQBDAAUAAAAAAAAAAQBLAAcAAAAAAAAAAQBUAAkAAAAAAAAAAQBVAAkAAAAAAAAAAQBWAAkAAAAAAAAAAQBXAAkAAAAAAAAAAQBkAAkAAAAAAAAAAQBqAAkAAAAAAAAAAQBwAAkAAAAAAAAAAQCPAAYAAAAAAAAAAQCOAAYAAAAAAAAAAQCNAAYAAAAAAAAAAQCMAAYAAAAAAAAAAQCLAAYAAAAAAAAAAQCKAAYAAAAAAAAAAQCJAAYAAAAAAAAAAQCIAAYAAAAAAAAAAQCHAAYAAAAAAAAAAQCGAAYAAAAAAAAAAQCFAAYAAAAAAAAAAQCEAAYAAAAAAAAAAQCDAAYAAAAAAAAAAQCCAAYAAAAAAAAAAQCBAAYAAAAAAAAAAQCBAAkAAAAAAAAAAQCCAAkAAAAAAAAAAQCDAAkAAAAAAAAAAQCEAAkAAAAAAAAAAQCFAAkAAAAAAAAAAQCGAAkAAAAAAAAAAQCHAAkAAAAAAAAAAQCIAAkAAAAAAAAAAQCJAAkAAAAAAAAAAQCKAAkAAAAAAAAAAQCLAAkAAAAAAAAAAQCMAAkAAAAAAAAAAQCNAAkAAAAAAAAAAQCOAAkAAAAAAAAAAQCPAAkAAAAAAAAAAQCBAAMAAAAAAAAAAQCCAAMAAAAAAAAAAQCDAAMAAAAAAAAAAQCEAAMAAAAAAAAAAQCFAAMAAAAAAAAAAQCGAAMAAAAAAAAAAQCHAAMAAAAAAAAAAQCIAAMAAAAAAAAAAQCJAAMAAAAAAAAAAQCKAAMAAAAAAAAAAQCLAAMAAAAAAAAAAQCMAAMAAAAAAAAAAQCNAAMAAAAAAAAAAQCOAAMAAAAAAAAAAQCPAAMAAAAAAAAAAQCXAAYAAAAAAAAAAQCUAAUAAAAAAAAAAQCaAAcAAAAAAAAAAQCdAAgAAAAAAAAAAQCgAAkAAAAAAAAAAQCjAAoAAAAAAAAAAQCkAAoAAAAAAAAAAQClAAoAAAAAAAAAAQCmAAoAAAAAAAAAAQCnAAoAAAAAAAAAAQCoAAoAAAAAAAAAAQCpAAoAAAAAAAAAAQCqAAoAAAAAAAAAAQCrAAoAAAAAAAAAAQCsAAoAAAAAAAAAAQA=")
+tile_set = ExtResource("10_xusq7")
+
 [node name="Limit" type="StaticBody2D" parent="."]
 position = Vector2(30, 162)
 
@@ -139,3 +147,12 @@ position = Vector2(854, 78)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2(2065.125, 91.75)
 shape = SubResource("RectangleShape2D_fr615")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("13_itysq")
+volume_db = -10.0
+autoplay = true
+
+[node name="Controles" parent="." instance=ExtResource("15_rehxv")]
+
+[node name="HUD" parent="." instance=ExtResource("17_w4kbc")]

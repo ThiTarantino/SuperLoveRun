@@ -40,6 +40,7 @@ func go_to_dead_state():
 	anim.play("dead")
 	hitbox.process_mode = Node.PROCESS_MODE_DISABLED
 	velocity = Vector2.ZERO
+	Globals.score += 100
 
 func walk_state(_delta):
 	if anim.frame == 3 or anim.frame == 4:

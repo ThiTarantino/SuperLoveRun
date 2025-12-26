@@ -1,11 +1,13 @@
-[gd_scene load_steps=8 format=4 uid="uid://d0opyacbti7b6"]
+[gd_scene load_steps=10 format=4 uid="uid://d0opyacbti7b6"]
 
 [ext_resource type="PackedScene" uid="uid://blushqas4u821" path="res://entidades/player.tscn" id="1_rrfiq"]
 [ext_resource type="PackedScene" uid="uid://dftwnbncbjrm4" path="res://entidades/camera.tscn" id="2_rpc5m"]
 [ext_resource type="PackedScene" uid="uid://btvt157u07qw0" path="res://entidades/leves_end.tscn" id="3_315q1"]
-[ext_resource type="TileSet" uid="uid://b1juqxup8lqtu" path="res://Scene/Tiles/Tiles/Terrain.tres" id="4_3a5jt"]
-[ext_resource type="TileSet" uid="uid://7bp717q77rw" path="res://Scene/Tiles/Tiles/Lava.tres" id="5_rpc5m"]
-[ext_resource type="PackedScene" uid="uid://mpgc3y8o1kcv" path="res://entidades/skeleton.tscn" id="6_315q1"]
+[ext_resource type="TileSet" uid="uid://b1juqxup8lqtu" path="res://Tiles/Tiles/Terrain.tres" id="4_3a5jt"]
+[ext_resource type="TileSet" uid="uid://7bp717q77rw" path="res://Tiles/Tiles/Lava.tres" id="5_rpc5m"]
+[ext_resource type="Texture2D" uid="uid://bgd78k7vg5jx7" path="res://Sprites/Seasonal Tilesets/4 - Winter World/Background parts/_Complete_static_BG_(288 x 208).png" id="7_88co5"]
+[ext_resource type="Texture2D" uid="uid://c182mechegi1f" path="res://Sprites/Seasonal Tilesets/4 - Winter World/Background parts/2 - Smaller_mountains.png" id="8_qhgph"]
+[ext_resource type="Texture2D" uid="uid://cty0gajk537tx" path="res://Sprites/Seasonal Tilesets/4 - Winter World/Background parts/1 - Snowy_foreground_area.png" id="9_ay1aq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rpc5m"]
 size = Vector2(12, 205)
@@ -24,7 +26,7 @@ position = Vector2(152, 104)
 position = Vector2(564, 182)
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
-tile_map_data = PackedByteArray("AAAAAAwAAwABAAMAAAABAAwAAwACAAMAAAACAAwAAwACAAMAAAADAAwAAwACAAMAAAAEAAwAAwACAAMAAAAFAAwAAwACAAMAAAAGAAwAAwACAAMAAAAHAAwAAwACAAMAAAAIAAwAAwACAAMAAAAJAAwAAwACAAMAAAAKAAwAAwACAAMAAAALAAwAAwACAAMAAAAMAAwAAwACAAMAAAANAAwAAwACAAMAAAAOAAwAAwACAAMAAAAPAAwAAwACAAMAAAAQAAwAAwACAAMAAAARAAwAAwACAAMAAAASAAwAAwACAAMAAAATAAwAAwACAAMAAAAUAAwAAwACAAMAAAAVAAwAAwACAAMAAAAWAAwAAwACAAMAAAAXAAwAAwACAAMAAAAYAAwAAwACAAMAAAAZAAwAAwACAAMAAAAaAAwAAwACAAMAAAAbAAwAAwACAAMAAAAcAAwAAwACAAMAAAAdAAwAAwACAAMAAAAeAAwAAwACAAMAAAAfAAwAAwACAAMAAAAgAAwAAwACAAMAAAAhAAwAAwACAAMAAAAiAAwAAwACAAMAAAAjAAwAAwACAAMAAAA=")
+tile_map_data = PackedByteArray("AAAAAAwAAwAEAAIAAAABAAwAAwAFAAMAAAACAAwAAwACAAMAAAADAAwAAwACAAMAAAAEAAwAAwACAAMAAAAFAAwAAwACAAMAAAAGAAwAAwACAAMAAAAHAAwAAwACAAMAAAAIAAwAAwACAAMAAAAJAAwAAwACAAMAAAAKAAwAAwACAAMAAAALAAwAAwACAAMAAAAMAAwAAwACAAMAAAANAAwAAwACAAMAAAAOAAwAAwACAAMAAAAPAAwAAwACAAMAAAAQAAwAAwACAAMAAAARAAwAAwACAAMAAAASAAwAAwACAAMAAAATAAwAAwACAAMAAAAUAAwAAwACAAMAAAAVAAwAAwACAAMAAAAWAAwAAwACAAMAAAAXAAwAAwACAAMAAAAYAAwAAwACAAMAAAAZAAwAAwACAAMAAAAaAAwAAwACAAMAAAAbAAwAAwACAAMAAAAcAAwAAwACAAMAAAAdAAwAAwACAAMAAAAeAAwAAwACAAMAAAAfAAwAAwACAAMAAAAgAAwAAwACAAMAAAAhAAwAAwACAAMAAAAiAAwAAwACAAMAAAAjAAwAAwACAAMAAAAAAAAAAwAEAAIAAAAAAAEAAwAEAAIAAAAAAAIAAwAEAAIAAAAAAAMAAwAEAAIAAAAAAAQAAwAEAAIAAAAAAAUAAwAEAAIAAAAAAAYAAwAEAAIAAAAAAAcAAwAEAAIAAAAAAAgAAwAEAAIAAAAAAAkAAwAEAAIAAAAAAAoAAwAEAAIAAAAAAAsAAwAEAAIAAAABAAAAAwAFAAIAAAABAAEAAwAFAAIAAAABAAIAAwAFAAIAAAABAAMAAwAFAAIAAAABAAQAAwAFAAIAAAABAAUAAwAFAAIAAAABAAYAAwAFAAIAAAABAAcAAwAFAAIAAAABAAgAAwAFAAIAAAABAAkAAwAFAAIAAAABAAoAAwAFAAIAAAABAAsAAwAFAAIAAAA=")
 tile_set = ExtResource("4_3a5jt")
 
 [node name="TileMapLayer2" type="TileMapLayer" parent="." groups=["LethalArea"]]
@@ -38,5 +40,37 @@ tile_set = ExtResource("5_rpc5m")
 position = Vector2(-4, 92.5)
 shape = SubResource("RectangleShape2D_rpc5m")
 
-[node name="Skeleton" parent="." instance=ExtResource("6_315q1")]
-position = Vector2(86, 175)
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="5-Sky" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0, 0)
+motion_mirroring = Vector2(288, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/5-Sky"]
+texture_repeat = 2
+texture = ExtResource("7_88co5")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 576, 208)
+
+[node name="4-Floating-clouds" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.1, 0.05)
+motion_mirroring = Vector2(288, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/4-Floating-clouds"]
+texture_repeat = 2
+texture = ExtResource("8_qhgph")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 576, 208)
+
+[node name="3-Backgroung-clouds" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.2, 0.1)
+motion_mirroring = Vector2(288, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/3-Backgroung-clouds"]
+texture_repeat = 2
+texture = ExtResource("9_ay1aq")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 576, 208)

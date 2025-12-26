@@ -1,0 +1,435 @@
+[gd_scene load_steps=21 format=4 uid="uid://dxde27lbitcy0"]
+
+[ext_resource type="TileSet" uid="uid://b1juqxup8lqtu" path="res://Tiles/Tiles/Terrain.tres" id="1_ci7k7"]
+[ext_resource type="TileSet" uid="uid://dlsauvqge0sra" path="res://Tiles/Tiles/Decoration.tres" id="2_x7sco"]
+[ext_resource type="TileSet" uid="uid://7bp717q77rw" path="res://Tiles/Tiles/Lava.tres" id="3_qi142"]
+[ext_resource type="PackedScene" uid="uid://mpgc3y8o1kcv" path="res://entidades/skeleton.tscn" id="4_34lip"]
+[ext_resource type="TileSet" uid="uid://cmhkcsquaf8u3" path="res://Tiles/Tiles/itens.tres" id="4_ohx1p"]
+[ext_resource type="PackedScene" uid="uid://ce7wvsc5pmjhp" path="res://entidades/plant_1.tscn" id="5_ohx1p"]
+[ext_resource type="PackedScene" uid="uid://blushqas4u821" path="res://entidades/player.tscn" id="6_26dj1"]
+[ext_resource type="Texture2D" uid="uid://dan6wa5apjyhs" path="res://Sprites/Seasonal Tilesets/1 - Grassland/Background parts/5 - Sky_color.png" id="7_jxe2p"]
+[ext_resource type="Texture2D" uid="uid://d3bnxa846naf6" path="res://Sprites/Seasonal Tilesets/1 - Grassland/Background parts/3 - Cloud_cover_1.png" id="8_ibw51"]
+[ext_resource type="Texture2D" uid="uid://cjvwah88wripr" path="res://Sprites/Seasonal Tilesets/1 - Grassland/Background parts/4 - Cloud_cover_2.png" id="9_6i106"]
+[ext_resource type="Texture2D" uid="uid://gchxs0vtrvo5" path="res://Sprites/Seasonal Tilesets/1 - Grassland/Background parts/2 - Hills.png" id="10_ghixj"]
+[ext_resource type="Texture2D" uid="uid://dbpbyn7rpye6u" path="res://Sprites/Seasonal Tilesets/1 - Grassland/Background parts/1 - Foreground_scenery.png" id="11_kbdiu"]
+[ext_resource type="PackedScene" uid="uid://dftwnbncbjrm4" path="res://entidades/camera.tscn" id="12_x7sco"]
+[ext_resource type="PackedScene" uid="uid://btvt157u07qw0" path="res://entidades/leves_end.tscn" id="13_qi142"]
+[ext_resource type="AudioStream" uid="uid://dx5evjjxnoeca" path="res://musicas/under-the-elven-star-fantasy-rpg-music-447854.mp3" id="15_ohx1p"]
+[ext_resource type="PackedScene" uid="uid://bww0hlsltla4e" path="res://entidades/controles.tscn" id="16_26dj1"]
+[ext_resource type="PackedScene" uid="uid://dfnnytcqp8yuu" path="res://entidades/hud.tscn" id="17_jxe2p"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_34lip"]
+size = Vector2(315, 2.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ohx1p"]
+size = Vector2(7.261322, 2757.2422)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_26dj1"]
+size = Vector2(43.300453, 0.8630066)
+
+[node name="6" type="Node2D"]
+metadata/_edit_vertical_guides_ = [-291.0]
+metadata/_edit_horizontal_guides_ = [-790.0]
+
+[node name="TileMaps" type="Node" parent="."]
+
+[node name="Terrain" type="TileMapLayer" parent="TileMaps"]
+tile_map_data = PackedByteArray("AAAAANP/AAAKAAMAAAAAANj/AAAKAAMAAAAAAN3/AAAKAAMAAAAAAOL/AAAKAAMAAAAAAOf/AAAKAAMAAAAAAOz/AAAKAAMAAAAAAPH/AAAKAAMAAAAAAPb/AAAKAAMAAAAAAPv/AAAKAAMAAAAAAAAAAAAKAAMAAAAAAAUAAAAKAAMAAAABANP/AAAKAAMAAAABANj/AAAKAAMAAAABAN3/AAAKAAMAAAABAOL/AAAKAAMAAAABAOf/AAAKAAMAAAABAOz/AAAKAAMAAAABAPH/AAAKAAMAAAABAPb/AAAKAAMAAAABAPv/AAAKAAMAAAABAAAAAAAKAAMAAAABAAUAAAAKAAMAAAACANP/AAAKAAMAAAACANj/AAANAAMAAAACAN3/AAAKAAMAAAACAOL/AAANAAMAAAACAOf/AAAKAAMAAAACAOz/AAANAAMAAAACAPH/AAAKAAMAAAACAPb/AAANAAMAAAACAPv/AAAKAAMAAAACAAAAAAANAAMAAAACAAUAAAAKAAMAAAADANP/AAAKAAMAAAADAN3/AAAKAAMAAAADAOf/AAAKAAMAAAADAPH/AAAKAAMAAAADAPv/AAAKAAMAAAADAAUAAAAKAAMAAAAEANP/AAAKAAMAAAAEAN3/AAAKAAMAAAAEAOf/AAAKAAMAAAAEAPH/AAAKAAMAAAAEAPv/AAAKAAMAAAAEAAUAAAAKAAMAAAAFANP/AAAKAAMAAAAFANj/AAAJAAMAAAAFAN3/AAAKAAMAAAAFAOL/AAAJAAMAAAAFAOf/AAAKAAMAAAAFAOz/AAAJAAMAAAAFAPH/AAAKAAMAAAAFAPb/AAAJAAMAAAAFAPv/AAAKAAMAAAAFAAAAAAAJAAMAAAAFAAUAAAAKAAMAAAAGANP/AAAKAAMAAAAGANj/AAAKAAMAAAAGAN3/AAAKAAMAAAAGAOL/AAAKAAMAAAAGAOf/AAAKAAMAAAAGAOz/AAAKAAMAAAAGAPH/AAAKAAMAAAAGAPb/AAAKAAMAAAAGAPv/AAAKAAMAAAAGAAAAAAAKAAMAAAAGAAUAAAAKAAMAAAAHANP/AAAKAAMAAAAHANj/AAAKAAMAAAAHAN3/AAAKAAMAAAAHAOL/AAAKAAMAAAAHAOf/AAAKAAMAAAAHAOz/AAAKAAMAAAAHAPH/AAAKAAMAAAAHAPb/AAAKAAMAAAAHAPv/AAAKAAMAAAAHAAAAAAAKAAMAAAAHAAUAAAAKAAMAAAAIANP/AAAKAAMAAAAIANj/AAAKAAMAAAAIAN3/AAAKAAMAAAAIAOL/AAAKAAMAAAAIAOf/AAAKAAMAAAAIAOz/AAAKAAMAAAAIAPH/AAAKAAMAAAAIAPb/AAAKAAMAAAAIAPv/AAAKAAMAAAAIAAAAAAAKAAMAAAAIAAUAAAAKAAMAAAAJANP/AAAKAAMAAAAJANj/AAAKAAMAAAAJAN3/AAAKAAMAAAAJAOL/AAAKAAMAAAAJAOf/AAAKAAMAAAAJAOz/AAAKAAMAAAAJAPH/AAAKAAMAAAAJAPb/AAAKAAMAAAAJAPv/AAAKAAMAAAAJAAAAAAAKAAMAAAAJAAUAAAAKAAMAAAAKANP/AAAKAAMAAAAKANj/AAAKAAMAAAAKAN3/AAAKAAMAAAAKAOL/AAAKAAMAAAAKAOf/AAAKAAMAAAAKAOz/AAAKAAMAAAAKAPH/AAAKAAMAAAAKAPb/AAAKAAMAAAAKAPv/AAAKAAMAAAAKAAAAAAAKAAMAAAAKAAUAAAAKAAMAAAALANP/AAAKAAMAAAALANj/AAAKAAMAAAALAN3/AAAKAAMAAAALAOL/AAAKAAMAAAALAOf/AAAKAAMAAAALAOz/AAAKAAMAAAALAPH/AAAKAAMAAAALAPb/AAAKAAMAAAALAPv/AAAKAAMAAAALAAAAAAAKAAMAAAALAAUAAAAKAAMAAAAMANP/AAAKAAMAAAAMANj/AAAKAAMAAAAMAN3/AAAKAAMAAAAMAOL/AAAKAAMAAAAMAOf/AAAKAAMAAAAMAOz/AAAKAAMAAAAMAPH/AAAKAAMAAAAMAPb/AAAKAAMAAAAMAPv/AAAKAAMAAAAMAAAAAAAKAAMAAAAMAAUAAAAKAAMAAAANANP/AAAKAAMAAAANANj/AAAKAAMAAAANAN3/AAAKAAMAAAANAOL/AAAKAAMAAAANAOf/AAAKAAMAAAANAOz/AAAKAAMAAAANAPH/AAAKAAMAAAANAPb/AAAKAAMAAAANAPv/AAAKAAMAAAANAAAAAAAKAAMAAAANAAUAAAAKAAMAAAAOANP/AAAKAAMAAAAOANj/AAAKAAMAAAAOAN3/AAAKAAMAAAAOAOL/AAAKAAMAAAAOAOf/AAAKAAMAAAAOAOz/AAAKAAMAAAAOAPH/AAAKAAMAAAAOAPb/AAAKAAMAAAAOAPv/AAAKAAMAAAAOAAAAAAAKAAMAAAAOAAUAAAAKAAMAAAAPANP/AAAKAAMAAAAPANj/AAAKAAMAAAAPAN3/AAAKAAMAAAAPAOL/AAAKAAMAAAAPAOf/AAAKAAMAAAAPAOz/AAAKAAMAAAAPAPH/AAAKAAMAAAAPAPb/AAAKAAMAAAAPAPv/AAAKAAMAAAAPAAAAAAAKAAMAAAAPAAUAAAAKAAMAAAAQANP/AAAKAAMAAAAQANj/AAAKAAMAAAAQAN3/AAAKAAMAAAAQAOL/AAAKAAMAAAAQAOf/AAAKAAMAAAAQAOz/AAAKAAMAAAAQAPH/AAAKAAMAAAAQAPb/AAAKAAMAAAAQAPv/AAAKAAMAAAAQAAAAAAAKAAMAAAAQAAUAAAAKAAMAAAARANP/AAAKAAMAAAARANj/AAAKAAMAAAARAN3/AAAKAAMAAAARAOL/AAAKAAMAAAARAOf/AAAKAAMAAAARAOz/AAAKAAMAAAARAPH/AAAKAAMAAAARAPb/AAAKAAMAAAARAPv/AAAKAAMAAAARAAAAAAAKAAMAAAARAAUAAAAKAAMAAAASANP/AAAKAAMAAAASANj/AAAKAAMAAAASAN3/AAAKAAMAAAASAOL/AAAKAAMAAAASAOf/AAAKAAMAAAASAOz/AAAKAAMAAAASAPH/AAAKAAMAAAASAPb/AAAKAAMAAAASAPv/AAAKAAMAAAASAAAAAAAKAAMAAAASAAUAAAAKAAMAAAATANP/AAANAAMAAAATANj/AAAKAAMAAAATAN3/AAANAAMAAAATAOL/AAAKAAMAAAATAOf/AAANAAMAAAATAOz/AAAKAAMAAAATAPH/AAANAAMAAAATAPb/AAAKAAMAAAATAPv/AAANAAMAAAATAAAAAAAKAAMAAAATAAUAAAANAAMAAAAUANj/AAAKAAMAAAAUAOL/AAAKAAMAAAAUAOz/AAAKAAMAAAAUAPb/AAAKAAMAAAAUAAAAAAAKAAMAAAAVANj/AAAKAAMAAAAVAOL/AAAKAAMAAAAVAOz/AAAKAAMAAAAVAPb/AAAKAAMAAAAVAAAAAAAKAAMAAAAWANP/AAAJAAMAAAAWANj/AAAKAAMAAAAWAN3/AAAJAAMAAAAWAOL/AAAKAAMAAAAWAOf/AAAJAAMAAAAWAOz/AAAKAAMAAAAWAPH/AAAJAAMAAAAWAPb/AAAKAAMAAAAWAPv/AAAJAAMAAAAWAAAAAAAKAAMAAAAWAAUAAAAJAAMAAAAXANP/AAAKAAMAAAAXANj/AAAKAAMAAAAXAN3/AAAKAAMAAAAXAOL/AAAKAAMAAAAXAOf/AAAKAAMAAAAXAOz/AAAKAAMAAAAXAPH/AAAKAAMAAAAXAPb/AAAKAAMAAAAXAPv/AAAKAAMAAAAXAAAAAAAKAAMAAAAXAAUAAAAKAAMAAAAYANP/AAAKAAMAAAAYANj/AAAKAAMAAAAYAN3/AAAKAAMAAAAYAOL/AAAKAAMAAAAYAOf/AAAKAAMAAAAYAOz/AAAKAAMAAAAYAPH/AAAKAAMAAAAYAPb/AAAKAAMAAAAYAPv/AAAKAAMAAAAYAAAAAAAKAAMAAAAYAAUAAAAKAAMAAAAAAAsAAAACAAMAAAABAAsAAAACAAMAAAACAAsAAAACAAMAAAADAAsAAAACAAMAAAAEAAsAAAACAAMAAAAFAAsAAAACAAMAAAAGAAsAAAACAAMAAAAHAAsAAAACAAMAAAAIAAsAAAACAAMAAAAJAAsAAAACAAMAAAAPAAsAAAACAAMAAAAQAAsAAAACAAMAAAARAAsAAAACAAMAAAASAAsAAAACAAMAAAATAAsAAAACAAMAAAAUAAsAAAACAAMAAAAVAAsAAAACAAMAAAAWAAsAAAACAAMAAAAXAAsAAAACAAMAAAAYAAsAAAACAAMAAAAZAAsAAAACAAMAAAAaAAsAAAAHAAMAAAAKAAsAAAACAAMAAAALAAsAAAACAAMAAAAMAAsAAAACAAMAAAANAAsAAAACAAMAAAAOAAsAAAACAAMAAAA=")
+tile_set = ExtResource("1_ci7k7")
+
+[node name="Decoration" type="TileMapLayer" parent="TileMaps"]
+tile_map_data = PackedByteArray("AAAVAAoAAAADAAUAAAAWAAoAAQACAAAAAAAXAAoAAQADAAAAAAATAAoAAQAAAAAAAAAUAAoAAQABAAAAAAA=")
+tile_set = ExtResource("2_x7sco")
+
+[node name="Lava" type="TileMapLayer" parent="TileMaps" groups=["LethalArea"]]
+tile_map_data = PackedByteArray("AAAKAAwAAAAAAAEAAAALAAwAAAAAAAEAAAAMAAwAAAAAAAEAAAANAAwAAAAAAAEAAAAOAAwAAAAAAAEAAAAbAAwAAAAAAAEAAAAcAAwAAAAAAAEAAAAdAAwAAAAAAAEAAAAeAAwAAAAAAAEAAAAfAAwAAAAAAAEAAAAgAAwAAAAAAAEAAAAhAAwAAAAAAAEAAAAiAAwAAAAAAAEAAAAjAAwAAAAAAAEAAAAkAAwAAAAAAAEAAAAlAAwAAAAAAAEAAAAmAAwAAAAAAAEAAAAnAAwAAAAAAAEAAAAoAAwAAAAAAAEAAAApAAwAAAAAAAEAAAAqAAwAAAAAAAEAAAArAAwAAAAAAAEAAAAsAAwAAAAAAAEAAAAtAAwAAAAAAAEAAAAuAAwAAAAAAAEAAAAvAAwAAAAAAAEAAAAwAAwAAAAAAAEAAAAxAAwAAAAAAAEAAAAyAAwAAAAAAAEAAAAzAAwAAAAAAAEAAAA0AAwAAAAAAAEAAAA1AAwAAAAAAAEAAAAKAAsAAAAAAAAAAAALAAsAAAAAAAAAAAAMAAsAAAAAAAAAAAANAAsAAAAAAAAAAAAOAAsAAAAAAAAAAAAbAAsAAAAAAAAAAAAcAAsAAAAAAAAAAAAdAAsAAAAAAAAAAAAeAAsAAAAAAAAAAAAfAAsAAAAAAAAAAAAgAAsAAAAAAAAAAAAhAAsAAAAAAAAAAAAiAAsAAAAAAAAAAAAjAAsAAAAAAAAAAAAkAAsAAAAAAAAAAAAlAAsAAAAAAAAAAAAmAAsAAAAAAAAAAAAnAAsAAAAAAAAAAAAoAAsAAAAAAAAAAAApAAsAAAAAAAAAAAAqAAsAAAAAAAAAAAArAAsAAAAAAAAAAAAsAAsAAAAAAAAAAAAtAAsAAAAAAAAAAAAuAAsAAAAAAAAAAAAvAAsAAAAAAAAAAAAwAAsAAAAAAAAAAAAxAAsAAAAAAAAAAAAyAAsAAAAAAAAAAAAzAAsAAAAAAAAAAAA0AAsAAAAAAAAAAAA1AAsAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAAwAAAAAAAEAAAABAAsAAAAAAAAAAAABAAwAAAAAAAEAAAACAAsAAAAAAAAAAAACAAwAAAAAAAEAAAADAAsAAAAAAAAAAAADAAwAAAAAAAEAAAAEAAsAAAAAAAAAAAAEAAwAAAAAAAEAAAAFAAsAAAAAAAAAAAAFAAwAAAAAAAEAAAAGAAsAAAAAAAAAAAAGAAwAAAAAAAEAAAAHAAsAAAAAAAAAAAAHAAwAAAAAAAEAAAAIAAsAAAAAAAAAAAAIAAwAAAAAAAEAAAAJAAsAAAAAAAAAAAAJAAwAAAAAAAEAAAAPAAsAAAAAAAAAAAAPAAwAAAAAAAEAAAAQAAsAAAAAAAAAAAAQAAwAAAAAAAEAAAARAAsAAAAAAAAAAAARAAwAAAAAAAEAAAASAAsAAAAAAAAAAAASAAwAAAAAAAEAAAATAAsAAAAAAAAAAAATAAwAAAAAAAEAAAAUAAsAAAAAAAAAAAAUAAwAAAAAAAEAAAAVAAsAAAAAAAAAAAAVAAwAAAAAAAEAAAAWAAsAAAAAAAAAAAAWAAwAAAAAAAEAAAAXAAsAAAAAAAAAAAAXAAwAAAAAAAEAAAAYAAsAAAAAAAAAAAAYAAwAAAAAAAEAAAAZAAsAAAAAAAAAAAAZAAwAAAAAAAEAAAAaAAsAAAAAAAAAAAAaAAwAAAAAAAEAAAA=")
+tile_set = ExtResource("3_qi142")
+
+[node name="itens" type="TileMapLayer" parent="TileMaps"]
+tile_map_data = PackedByteArray("AAAEANL/AAAAAAAAAQAFANL/AAAAAAAAAQAGANL/AAAAAAAAAQAJANL/AAAAAAAAAQAKANL/AAAAAAAAAQALANL/AAAAAAAAAQAOANL/AAAAAAAAAQAPANL/AAAAAAAAAQAQANL/AAAAAAAAAQAXANL/AAAAAAAAAQAGANf/AAAAAAAAAQAHANf/AAAAAAAAAQAIANf/AAAAAAAAAQALANf/AAAAAAAAAQAMANf/AAAAAAAAAQANANf/AAAAAAAAAQAWANz/AAAAAAAAAQAIANz/AAAAAAAAAQAJANz/AAAAAAAAAQAKANz/AAAAAAAAAQAYAOH/AAAAAAAAAQAXAOb/AAAAAAAAAQANAOH/AAAAAAAAAQAHAOH/AAAAAAAAAQAAAAQAAAAAAAAAAQABAAQAAAAAAAAAAQACAAQAAAAAAAAAAQADAAQAAAAAAAAAAQAEAAQAAAAAAAAAAQAFAAQAAAAAAAAAAQAGAAQAAAAAAAAAAQAHAAQAAAAAAAAAAQAIAAQAAAAAAAAAAQAJAAQAAAAAAAAAAQAKAAQAAAAAAAAAAQALAAQAAAAAAAAAAQAMAAQAAAAAAAAAAQANAAQAAAAAAAAAAQAOAAQAAAAAAAAAAQAPAAQAAAAAAAAAAQAQAAQAAAAAAAAAAQARAAQAAAAAAAAAAQASAAQAAAAAAAAAAQATAAQAAAAAAAAAAQAWAAQAAAAAAAAAAQAYAP//AAAAAAAAAQAXAP//AAAAAAAAAQAOAP//AAAAAAAAAQANAP//AAAAAAAAAQAGAP//AAAAAAAAAQAFAP//AAAAAAAAAQAEAPr/AAAAAAAAAQADAPr/AAAAAAAAAQAUAPX/AAAAAAAAAQAVAPX/AAAAAAAAAQAJAPD/AAAAAAAAAQAIAPD/AAAAAAAAAQAEAPD/AAAAAAAAAQADAPD/AAAAAAAAAQAMAPD/AAAAAAAAAQANAPD/AAAAAAAAAQACAPX/AAAAAAAAAQATAOv/AAAAAAAAAQAUAOv/AAAAAAAAAQASAOv/AAAAAAAAAQAOAPD/AAAAAAAAAQAHAPD/AAAAAAAAAQACAPD/AAAAAAAAAQATAPr/AAAAAAAAAQAFAPX/AAAAAAAAAQAYAAQAAAAAAAAAAQA=")
+tile_set = ExtResource("4_ohx1p")
+
+[node name="Player" parent="." instance=ExtResource("6_26dj1")]
+position = Vector2(24, -738)
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="5-Sky" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0, 0)
+motion_mirroring = Vector2(288, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/5-Sky"]
+texture_repeat = 2
+texture = ExtResource("7_jxe2p")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 576, 208)
+
+[node name="4-Floating-clouds" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.1, 0.05)
+motion_mirroring = Vector2(288, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/4-Floating-clouds"]
+texture_repeat = 2
+texture = ExtResource("8_ibw51")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 576, 208)
+
+[node name="3-Backgroung-clouds" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.2, 0.1)
+motion_mirroring = Vector2(288, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/3-Backgroung-clouds"]
+texture_repeat = 2
+texture = ExtResource("9_6i106")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 576, 208)
+
+[node name="2-Hills" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.3, 0.1)
+motion_mirroring = Vector2(288, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/2-Hills"]
+texture_repeat = 2
+texture = ExtResource("10_ghixj")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 576, 208)
+
+[node name="1- Fore" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.3, 0.1)
+motion_mirroring = Vector2(288, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/1- Fore"]
+texture_repeat = 2
+texture = ExtResource("11_kbdiu")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 576, 208)
+
+[node name="Camera" parent="." instance=ExtResource("12_x7sco")]
+position = Vector2(26, -737)
+limit_top = -806
+limit_right = 400
+drag_vertical_enabled = true
+drag_top_margin = 0.5
+drag_bottom_margin = 0.0
+
+[node name="Skeleton" parent="." instance=ExtResource("4_34lip")]
+position = Vector2(212, -258)
+
+[node name="inimigos" type="Node" parent="."]
+
+[node name="Skeleton2" parent="inimigos" instance=ExtResource("4_34lip")]
+position = Vector2(178, -340)
+
+[node name="Skeleton3" parent="inimigos" instance=ExtResource("4_34lip")]
+position = Vector2(91, -497)
+
+[node name="Plant3" parent="inimigos" instance=ExtResource("5_ohx1p")]
+position = Vector2(374, -573)
+
+[node name="Plant4" parent="inimigos" instance=ExtResource("5_ohx1p")]
+position = Vector2(376, -414)
+
+[node name="Plant5" parent="inimigos" instance=ExtResource("5_ohx1p")]
+position = Vector2(377, -253)
+
+[node name="Plant6" parent="inimigos" instance=ExtResource("5_ohx1p")]
+position = Vector2(374, -94)
+
+[node name="Plant7" parent="inimigos" instance=ExtResource("5_ohx1p")]
+position = Vector2(375, 66)
+
+[node name="Skeleton4" parent="inimigos" instance=ExtResource("4_34lip")]
+position = Vector2(306, -577)
+
+[node name="Skeleton5" parent="inimigos" instance=ExtResource("4_34lip")]
+position = Vector2(142, -420)
+
+[node name="Skeleton6" parent="inimigos" instance=ExtResource("4_34lip")]
+position = Vector2(386, -179)
+
+[node name="Skeleton7" parent="inimigos" instance=ExtResource("4_34lip")]
+position = Vector2(214, -97)
+
+[node name="Skeleton8" parent="inimigos" instance=ExtResource("4_34lip")]
+position = Vector2(90, -18)
+
+[node name="Skeleton9" parent="inimigos" instance=ExtResource("4_34lip")]
+position = Vector2(304, 62)
+
+[node name="Skeleton13" parent="inimigos" instance=ExtResource("4_34lip")]
+position = Vector2(218, -657)
+
+[node name="Plant10" parent="inimigos" instance=ExtResource("5_ohx1p")]
+position = Vector2(14, -653)
+olhar_para_direita = true
+
+[node name="Plant11" parent="inimigos" instance=ExtResource("5_ohx1p")]
+position = Vector2(15, -494)
+olhar_para_direita = true
+
+[node name="Plant12" parent="inimigos" instance=ExtResource("5_ohx1p")]
+position = Vector2(19, -333)
+olhar_para_direita = true
+
+[node name="Plant13" parent="inimigos" instance=ExtResource("5_ohx1p")]
+position = Vector2(17, -174)
+olhar_para_direita = true
+
+[node name="Plant14" parent="inimigos" instance=ExtResource("5_ohx1p")]
+position = Vector2(21, -15)
+olhar_para_direita = true
+
+[node name="limites" type="Node" parent="."]
+
+[node name="Limit8" type="StaticBody2D" parent="limites"]
+position = Vector2(-82, 80)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="limites/Limit8"]
+position = Vector2(240, -786)
+shape = SubResource("RectangleShape2D_34lip")
+
+[node name="Limit9" type="StaticBody2D" parent="limites"]
+position = Vector2(2, 160)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="limites/Limit9"]
+position = Vector2(240, -786)
+shape = SubResource("RectangleShape2D_34lip")
+
+[node name="Limit10" type="StaticBody2D" parent="limites"]
+position = Vector2(-82, 240)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="limites/Limit10"]
+position = Vector2(240, -786)
+shape = SubResource("RectangleShape2D_34lip")
+
+[node name="Limit11" type="StaticBody2D" parent="limites"]
+position = Vector2(2, 321)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="limites/Limit11"]
+position = Vector2(240, -786)
+shape = SubResource("RectangleShape2D_34lip")
+
+[node name="Limit12" type="StaticBody2D" parent="limites"]
+position = Vector2(-83, 401)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="limites/Limit12"]
+position = Vector2(240, -786)
+shape = SubResource("RectangleShape2D_34lip")
+
+[node name="Limit13" type="StaticBody2D" parent="limites"]
+position = Vector2(2, 480)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="limites/Limit13"]
+position = Vector2(240, -786)
+shape = SubResource("RectangleShape2D_34lip")
+
+[node name="Limit14" type="StaticBody2D" parent="limites"]
+position = Vector2(-83, 561)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="limites/Limit14"]
+position = Vector2(240, -786)
+shape = SubResource("RectangleShape2D_34lip")
+
+[node name="Limit15" type="StaticBody2D" parent="limites"]
+position = Vector2(2, 640)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="limites/Limit15"]
+position = Vector2(240, -786)
+shape = SubResource("RectangleShape2D_34lip")
+
+[node name="Limit16" type="StaticBody2D" parent="limites"]
+position = Vector2(-82, 720)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="limites/Limit16"]
+position = Vector2(240, -786)
+shape = SubResource("RectangleShape2D_34lip")
+
+[node name="Limit17" type="StaticBody2D" parent="limites"]
+position = Vector2(1, 800)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="limites/Limit17"]
+position = Vector2(240, -786)
+shape = SubResource("RectangleShape2D_34lip")
+
+[node name="Limit2" type="StaticBody2D" parent="limites"]
+position = Vector2(-1414, -304)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="limites/Limit2"]
+position = Vector2(1816, -215)
+scale = Vector2(0.27542898, 0.50412697)
+shape = SubResource("RectangleShape2D_ohx1p")
+
+[node name="Limit3" type="StaticBody2D" parent="limites"]
+position = Vector2(-1817, -324)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="limites/Limit3"]
+position = Vector2(1816.0001, -188)
+scale = Vector2(0.27542898, 0.50412697)
+shape = SubResource("RectangleShape2D_ohx1p")
+
+[node name="Limit" type="StaticBody2D" parent="limites"]
+position = Vector2(-197, 75)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="limites/Limit"]
+position = Vector2(574.34973, 18)
+shape = SubResource("RectangleShape2D_26dj1")
+
+[node name="Limit18" type="StaticBody2D" parent="limites"]
+position = Vector2(-550, -4)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="limites/Limit18"]
+position = Vector2(574.34973, 18)
+shape = SubResource("RectangleShape2D_26dj1")
+
+[node name="Limit19" type="StaticBody2D" parent="limites"]
+position = Vector2(-196, -84)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="limites/Limit19"]
+position = Vector2(574.34973, 18)
+shape = SubResource("RectangleShape2D_26dj1")
+
+[node name="Limit20" type="StaticBody2D" parent="limites"]
+position = Vector2(-553, -163)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="limites/Limit20"]
+position = Vector2(574.34973, 18)
+shape = SubResource("RectangleShape2D_26dj1")
+
+[node name="Limit21" type="StaticBody2D" parent="limites"]
+position = Vector2(-196, -243)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="limites/Limit21"]
+position = Vector2(574.34973, 18)
+shape = SubResource("RectangleShape2D_26dj1")
+
+[node name="Limit22" type="StaticBody2D" parent="limites"]
+position = Vector2(-551, -324)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="limites/Limit22"]
+position = Vector2(574.34973, 18)
+shape = SubResource("RectangleShape2D_26dj1")
+
+[node name="Limit23" type="StaticBody2D" parent="limites"]
+position = Vector2(-198, -403)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="limites/Limit23"]
+position = Vector2(574.34973, 18)
+shape = SubResource("RectangleShape2D_26dj1")
+
+[node name="Limit24" type="StaticBody2D" parent="limites"]
+position = Vector2(-551, -483)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="limites/Limit24"]
+position = Vector2(574.34973, 18)
+shape = SubResource("RectangleShape2D_26dj1")
+
+[node name="Limit25" type="StaticBody2D" parent="limites"]
+position = Vector2(-197, -564)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="limites/Limit25"]
+position = Vector2(574.34973, 18)
+shape = SubResource("RectangleShape2D_26dj1")
+
+[node name="Limit26" type="StaticBody2D" parent="limites"]
+position = Vector2(-552, -644)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="limites/Limit26"]
+position = Vector2(574.34973, 18)
+shape = SubResource("RectangleShape2D_26dj1")
+
+[node name="Limit27" type="StaticBody2D" parent="limites"]
+position = Vector2(-196, -725)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="limites/Limit27"]
+position = Vector2(574.34973, 18)
+shape = SubResource("RectangleShape2D_26dj1")
+
+[node name="LevesEnd" parent="." instance=ExtResource("13_qi142")]
+position = Vector2(342, 159)
+scale = Vector2(5.02415, -1.7143269)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("15_ohx1p")
+volume_db = -5.0
+autoplay = true
+
+[node name="Controles" parent="." instance=ExtResource("16_26dj1")]
+
+[node name="HUD" parent="." instance=ExtResource("17_jxe2p")]
+
+[connection signal="body_entered" from="TileMaps/itens/coin" to="TileMaps/itens/coin" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMaps/itens/@Area2D@32745" to="TileMaps/itens/@Area2D@32745" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMaps/itens/@Area2D@32746" to="TileMaps/itens/@Area2D@32746" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMaps/itens/@Area2D@32747" to="TileMaps/itens/@Area2D@32747" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMaps/itens/@Area2D@32748" to="TileMaps/itens/@Area2D@32748" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMaps/itens/@Area2D@32749" to="TileMaps/itens/@Area2D@32749" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMaps/itens/@Area2D@32750" to="TileMaps/itens/@Area2D@32750" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMaps/itens/@Area2D@32751" to="TileMaps/itens/@Area2D@32751" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMaps/itens/@Area2D@32752" to="TileMaps/itens/@Area2D@32752" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMaps/itens/@Area2D@32753" to="TileMaps/itens/@Area2D@32753" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMaps/itens/@Area2D@32754" to="TileMaps/itens/@Area2D@32754" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMaps/itens/@Area2D@32755" to="TileMaps/itens/@Area2D@32755" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMaps/itens/@Area2D@32756" to="TileMaps/itens/@Area2D@32756" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMaps/itens/@Area2D@32757" to="TileMaps/itens/@Area2D@32757" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMaps/itens/@Area2D@32758" to="TileMaps/itens/@Area2D@32758" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMaps/itens/@Area2D@32759" to="TileMaps/itens/@Area2D@32759" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMaps/itens/@Area2D@32760" to="TileMaps/itens/@Area2D@32760" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMaps/itens/@Area2D@32761" to="TileMaps/itens/@Area2D@32761" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMaps/itens/@Area2D@32762" to="TileMaps/itens/@Area2D@32762" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMaps/itens/@Area2D@32763" to="TileMaps/itens/@Area2D@32763" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMaps/itens/@Area2D@32764" to="TileMaps/itens/@Area2D@32764" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMaps/itens/@Area2D@32765" to="TileMaps/itens/@Area2D@32765" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMaps/itens/@Area2D@32766" to="TileMaps/itens/@Area2D@32766" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMaps/itens/@Area2D@32767" to="TileMaps/itens/@Area2D@32767" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMaps/itens/@Area2D@32768" to="TileMaps/itens/@Area2D@32768" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMaps/itens/@Area2D@32769" to="TileMaps/itens/@Area2D@32769" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMaps/itens/@Area2D@32770" to="TileMaps/itens/@Area2D@32770" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMaps/itens/@Area2D@32771" to="TileMaps/itens/@Area2D@32771" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMaps/itens/@Area2D@32772" to="TileMaps/itens/@Area2D@32772" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMaps/itens/@Area2D@32773" to="TileMaps/itens/@Area2D@32773" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMaps/itens/@Area2D@32774" to="TileMaps/itens/@Area2D@32774" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMaps/itens/@Area2D@32775" to="TileMaps/itens/@Area2D@32775" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMaps/itens/@Area2D@32776" to="TileMaps/itens/@Area2D@32776" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMaps/itens/@Area2D@32777" to="TileMaps/itens/@Area2D@32777" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMaps/itens/@Area2D@32778" to="TileMaps/itens/@Area2D@32778" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMaps/itens/@Area2D@32779" to="TileMaps/itens/@Area2D@32779" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMaps/itens/@Area2D@32780" to="TileMaps/itens/@Area2D@32780" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMaps/itens/@Area2D@32781" to="TileMaps/itens/@Area2D@32781" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMaps/itens/@Area2D@32782" to="TileMaps/itens/@Area2D@32782" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMaps/itens/@Area2D@32783" to="TileMaps/itens/@Area2D@32783" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMaps/itens/@Area2D@32784" to="TileMaps/itens/@Area2D@32784" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMaps/itens/@Area2D@32785" to="TileMaps/itens/@Area2D@32785" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMaps/itens/@Area2D@32786" to="TileMaps/itens/@Area2D@32786" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMaps/itens/@Area2D@32787" to="TileMaps/itens/@Area2D@32787" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMaps/itens/@Area2D@32788" to="TileMaps/itens/@Area2D@32788" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMaps/itens/@Area2D@32789" to="TileMaps/itens/@Area2D@32789" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMaps/itens/@Area2D@32790" to="TileMaps/itens/@Area2D@32790" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMaps/itens/@Area2D@32791" to="TileMaps/itens/@Area2D@32791" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMaps/itens/@Area2D@32792" to="TileMaps/itens/@Area2D@32792" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMaps/itens/@Area2D@32793" to="TileMaps/itens/@Area2D@32793" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMaps/itens/@Area2D@32794" to="TileMaps/itens/@Area2D@32794" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMaps/itens/@Area2D@32795" to="TileMaps/itens/@Area2D@32795" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMaps/itens/@Area2D@32796" to="TileMaps/itens/@Area2D@32796" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMaps/itens/@Area2D@32797" to="TileMaps/itens/@Area2D@32797" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMaps/itens/@Area2D@32798" to="TileMaps/itens/@Area2D@32798" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMaps/itens/@Area2D@32799" to="TileMaps/itens/@Area2D@32799" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMaps/itens/@Area2D@32800" to="TileMaps/itens/@Area2D@32800" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMaps/itens/@Area2D@32801" to="TileMaps/itens/@Area2D@32801" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMaps/itens/@Area2D@32802" to="TileMaps/itens/@Area2D@32802" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMaps/itens/@Area2D@32803" to="TileMaps/itens/@Area2D@32803" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMaps/itens/@Area2D@32804" to="TileMaps/itens/@Area2D@32804" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMaps/itens/@Area2D@32805" to="TileMaps/itens/@Area2D@32805" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMaps/itens/@Area2D@32806" to="TileMaps/itens/@Area2D@32806" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMaps/itens/@Area2D@32807" to="TileMaps/itens/@Area2D@32807" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMaps/itens/@Area2D@32808" to="TileMaps/itens/@Area2D@32808" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMaps/itens/@Area2D@32809" to="TileMaps/itens/@Area2D@32809" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMaps/itens/@Area2D@32810" to="TileMaps/itens/@Area2D@32810" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMaps/itens/@Area2D@32811" to="TileMaps/itens/@Area2D@32811" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMaps/itens/@Area2D@32812" to="TileMaps/itens/@Area2D@32812" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMaps/itens/@Area2D@32813" to="TileMaps/itens/@Area2D@32813" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMaps/itens/@Area2D@32814" to="TileMaps/itens/@Area2D@32814" method="_on_body_entered"]
